@@ -39,7 +39,7 @@ def test_fetch_facts_cat(fake_cat_facts):
         assert len(cat_facts) == 5
         assert cat_facts[-1]['animal'] == "cat"        
         assert cat_facts[-1]['fact'] == "they choose you, not the other way around." 
-        last_request = rm.request_history[0]      
+        last_request = rm.request_history[-1]      
         assert "Bearer abc123" == last_request.headers.get("Authorizaton")
 
 def test_fetch_facts_dog(fake_dog_facts):
@@ -58,7 +58,7 @@ def test_fetch_facts_dog(fake_dog_facts):
         assert len(dog_facts) == 5
         assert dog_facts[-1]['animal'] == "dog"        
         assert dog_facts[-1]['fact'] == "some like to go for a walk."
-        last_request = rm.request_history[0]      
+        last_request = rm.request_history[-1]      
         assert "Bearer abc123" == last_request.headers.get("Authorizaton")
 
 def test_fetch_facts_accesstoken_memoization(fake_cat_facts, fake_dog_facts):

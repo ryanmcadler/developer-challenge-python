@@ -17,3 +17,6 @@ pytest critter_facts/tests/clients/animalfacts_test.py
 ```
 
 Assume that we can use the token fetch endpoints defined in `critter_facts.clients.animalsfacts` to fetch tokens and refresh tokens and that these endpoints return a JSON object with `token`, `refresh_token`, `granted_at` (datetime), and `expiration` (seconds) attributes.
+
+###### Bonus Challenge
+How do we ensure that we refresh an access token when it expires?  Can we write a spec to test this behavior?
